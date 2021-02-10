@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <div id="app">
+      {{ message }}
+    </br>
+      <input v-model="newItem">
+      <button v-on:click="addItem()">Add to list</button>
+  </br>
+  <ul>
+    <li v-for="item in items">{{item}}</li>
+  </ul>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Vue!",
+          newItem: "Next",
+          items: ["One","Two","Three"]
+        },
+        methods:{
+          addItem: function () {
+            this.items.push(this.newItem)
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
